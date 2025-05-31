@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hero Section with Toggle Menu</title>
   <style>
     * {
@@ -12,21 +12,23 @@
     }
     body {
       font-family: Arial, sans-serif;
+      background: transparent;
     }
     .video-container {
       position: relative;
       width: 100%;
-      height: 0;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio for responsiveness */
+      height: 100vh;
       overflow: hidden;
+      aspect-ratio: 16 / 9;
     }
     .video-container video {
       object-fit: cover;
       width: 100%;
       height: 100%;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: -1;
     }
     .hero-overlay {
@@ -53,10 +55,9 @@
       left: 0;
       background: transparent;
     }
-    .company-name {
+    .company-name h3 {
       font-size: 24px;
       font-weight: bold;
-      opacity: 1; /* No transparency */
     }
     .logo-container {
       position: absolute;
@@ -64,9 +65,8 @@
       transform: translateX(-50%);
     }
     .logo {
-      width: 90px;
+      width: 70px;
       transition: transform 0.3s ease-in-out;
-      opacity: 1; /* No transparency */
     }
     .logo:hover {
       transform: scale(1.1);
@@ -101,7 +101,7 @@
     .menu {
       display: none;
       transform: translateX(100%);
-      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      transition: transform 0.3s ease, opacity 0.3s ease;
       opacity: 0;
       z-index: 50;
     }
@@ -123,18 +123,18 @@
     .menu a:hover {
       color: #ff9999;
     }
-    /* Responsive Rules */
+
+    /* Responsive */
     @media (max-width: 767px) {
       .video-container {
-        padding-bottom: 75%; /* Adjusted for mobile to ensure visibility */
-        min-height: 400px; /* Minimum height to avoid squashing */
+        min-height: 400px;
       }
       .header {
         flex-wrap: wrap;
         padding: 8px 16px;
         gap: 8px;
       }
-      .company-name {
+      .company-name h3 {
         font-size: 20px;
         flex: 1;
         order: 1;
@@ -160,9 +160,6 @@
         font-size: 14px;
         padding: 6px 12px;
       }
-      .toggle-btn {
-        display: block;
-      }
       .menu {
         position: fixed;
         top: 0;
@@ -174,17 +171,9 @@
         text-align: center;
         flex-direction: column;
       }
-      .menu li {
-        margin: 24px 0;
-      }
     }
+
     @media (min-width: 768px) {
-      .video-container {
-        padding-bottom: 56.25%; /* 16:9 aspect ratio for desktop */
-      }
-      .toggle-btn {
-        display: block;
-      }
       .menu {
         position: absolute;
         top: 100%;
@@ -205,14 +194,14 @@
 <body>
   <div class="video-container">
     <video autoplay muted loop playsinline>
-      <source src="vvideo.mp4" type="video/mp4">
+      <source src="vvideo.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
     <div class="hero-overlay">
       <div class="header">
         <div class="company-name"><h3>Sora Dental</h3></div>
         <div class="logo-container">
-          <img src="lo.png" alt="Logo" class="logo">
+          <img src="lo.png" alt="Logo" class="logo" />
         </div>
         <div class="right-section">
           <a href="#consultation" class="consult-btn">Get Consultation</a>
@@ -231,23 +220,11 @@
       </ul>
     </div>
   </div>
+
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
       menu.classList.toggle('active');
-      if (menu.classList.contains('active')) {
-        menu.style.display = 'flex';
-        setTimeout(() => {
-          menu.style.opacity = '1';
-          menu.style.transform = 'translateX(0)';
-        }, 10);
-      } else {
-        menu.style.opacity = '0';
-        menu.style.transform = 'translateX(100%)';
-        setTimeout(() => {
-          menu.style.display = 'none';
-        }, 300);
-      }
     }
   </script>
 </body>

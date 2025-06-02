@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sora Dental</title>
+  <link rel="stylesheet" href="indexz.css">
+  <style>
+  
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <video autoplay loop muted playsinline class="backvideo">
+      <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <nav>
+      <div class="nav-left">
+        <span class="brand-text">Sora Dental</span>
+      </div>
+      <div class="nav-center">
+        <img src="lo.png" class="logo" alt="Logo">
+      </div>
+      <div class="nav-right">
+        <a href="#" class="get-appointment-btn">Get Appointment</a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <a href="#" class="appointment-btn">Get Consultation</a>
+      </div>
+    </nav>
+
+    <div class="menu">
+      <a href="#">Services</a>
+      <a href="#">Contact Us</a>
+      <a href="#" class="appointment-btn">Get Consultation</a>
+    </div>
+
+    <div class="content">
+      <h1>Sora Dental</h1>
+      <a href="#" class="app">Get Appointment</a>
+    </div>
+  </div>
+
+  <section>
+    <div class="gallery">
+      <h2 class="section-heading animate-slide">Our Services</h2>
+      <div class="row">
+        <div class="card rectangle">
+          <img src="hero.png" alt="Dental Checkup">
+          <div class="card-text">Dental Checkup <span class="arrow">→</span></div>
+        </div>
+        <div class="card square">
+          <img src="hero1.png" alt="Teeth Whitening">
+          <div class="card-text">Teeth Whitening <span class="arrow">→</span></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card square">
+          <img src="hero2.png" alt="Orthodontics">
+          <div class="card-text">Orthodontics <span class="arrow">→</span></div>
+        </div>
+        <div class="card rectangle">
+          <img src="hero.png" alt="Dental Implants">
+          <div class="card-text">Dental Implants <span class="arrow">→</span></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card rectangle">
+          <img src="hero1.png" alt="Root Canal">
+          <div class="card-text">Root Canal <span class="arrow">→</span></div>
+        </div>
+        <div class="card square">
+          <img src="hero2.png" alt="Cosmetic Dentistry">
+          <div class="card-text">Cosmetic Dentistry <span class="arrow">→</span></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card square">
+          <img src="hero1.png" alt="Pediatric Dentistry">
+          <div class="card-text">Pediatric Dentistry <span class="arrow">→</span></div>
+        </div>
+        <div class="card rectangle">
+          <img src="hero2.png" alt="Emergency Care">
+          <div class="card-text">Emergency Care <span class="arrow">→</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+    const serviceCards = document.querySelectorAll('.card');
+
+    // Toggle menu when hamburger is clicked
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+        menu.classList.remove('active');
+        hamburger.classList.remove('active');
+      }
+    });
+
+    // Close menu on menu item click
+    menu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        menu.classList.remove('active');
+        hamburger.classList.remove('active');
+      }
+    });
+
+    // Scroll animation for cards using Intersection Observer
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    serviceCards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>

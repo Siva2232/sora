@@ -82,7 +82,7 @@
       left: 50%;
       transform: translateX(-50%);
       font-size: 2.5rem;
-      color: #1e3a8a;
+      color: #ffffff;
       padding: 10px 18px;
       animation: bounce 2s infinite;
       cursor: pointer;
@@ -191,6 +191,7 @@
       }
       .card {
         flex: 1 1 100%;
+        margin-right: 50px;
       }
       .gallery {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -293,7 +294,7 @@
       bottom: -6px;
       width: 0%;
       height: 3px;
-      background: #007acc;
+      background:grey;
       transition: width 0.4s ease;
       border-radius: 2px;
     }
@@ -303,7 +304,7 @@
     }
 
     .nav-links a:hover {
-      color: #007acc;
+      color:white;
       text-shadow: 0 0 8px #007acc44;
     }
 
@@ -313,6 +314,28 @@
         transform: translateY(0);
       }
     }
+     .animated-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ffffff, #cccccc);
+    border: none;
+    border-radius: 8px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .animated-button:hover {
+    background: linear-gradient(135deg, #e0e0e0, #f9f9f9);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .animated-button:active {
+    transform: scale(0.98);
+  }
   </style>
 </head>
 <body>
@@ -328,6 +351,7 @@
       <a href="#" style="--i:2">About</a>
       <a href="#" style="--i:3">Services</a>
       <a href="#" style="--i:4">Contact</a>
+      <button class="animated-button">Get Consultation</button>
     </nav>
   </div>
 
@@ -359,41 +383,62 @@
   <script>
     const services = {
       1: {
-        name: "Dental Checkup",
-        description: "Routine dental checkups ensure early detection and long-term oral health.",
+        name: "Clear Smile Solutions",
+        description: "Routine dental checkups ensure early detection and long-term oral health.outine dental checkups ensure early detection and long-term oral healthoutine dental checkups ensure early detection and long-term oral healthoutine dental checkups ensure early detection and long-term oral health outine dental checkups ensure early detection and long-term oral healthoutine dental checkups ensure early detection and long-term oral health",
         images: [
-          "dental.png",
-          "dental ckeckup.png",
-          "https://picsum.photos/800/350?random=3"
+          "imagee1.png",
+          "imgg33.png",
+          "imggg1.png"
         ],
         cards: [
-          { title: "Exam & Diagnosis", desc: "Comprehensive examination of teeth, gums, and mouth." },
-          { title: "Professional Cleaning", desc: "Thorough cleaning to remove plaque and tartar." },
-          { title: "Preventive Advice", desc: "Personalized tips for better home oral care." }
+          { title: "Teeth Crowding Correction", desc: "Crowded teeth occur when there isn’t enough room in the jaw for all your teeth to fit properly. This can lead to overlapping, twisting, and increased risk of plaque buildup, gum disease, and difficulty cleaning. Invisalign aligners gradually move crowded teeth into their correct position using gentle, consistent pressure—improving both the aesthetics of your smile and your long-term dental health." },
+          { title: " Gap Closure Between Teeth", desc: "Spaces between teeth, also known as diastemas, may result from genetics, missing teeth, or abnormal jawbone growth. These gaps can affect speech, chewing, and overall appearance. Invisalign carefully brings teeth closer together by applying pressure to specific areas, resulting in a more even bite, reduced risk of gum problems, and a polished, gap-free smile." },
+          { title: "Bite Alignment (Overbite, Underbite & Crossbite)", desc: "Crossbite: Some upper teeth bite inside the lower teeth." }
         ],
         gallery: [
-          "https://picsum.photos/200/150?random=4",
-          "https://picsum.photos/200/150?random=5",
-          "https://picsum.photos/200/150?random=6"
+           "imgg2.png",
+          "imgg33.png",
+          "imggg1.png",
+          "imgg2.png"
+
         ]
       },
       2: {
-        name: "Teeth Whitening",
-        description: "Brighten your smile with our safe and effective whitening treatments.",
+        name: "Invisible Teeth Correction",
+        description: "Discreet, Comfortable, and Effective Smile Transformation Say goodbye to bulky metal braces and hello to clear confidence. Invisible teeth correction with Invisalign uses custom-designed, transparent aligners to gradually shift your teeth into place without interrupting your daily life. Whether you are dealing with crowding, gaps, or bite issues, this modern orthodontic solution offers a nearly invisible way to achieve the perfect smile you have always wanted.",
         images: [
           "https://picsum.photos/800/350?random=10",
           "https://picsum.photos/800/350?random=11",
           "https://picsum.photos/800/350?random=12"
         ],
         cards: [
-          { title: "In-Office Whitening", desc: "Fast and safe professional whitening in one visit." },
-          { title: "Take-Home Kits", desc: "Custom trays and gel for gradual whitening at home." },
+          { title: "Straightening Crowded Teeth", desc: "Crowded teeth are not only difficult to clean, but they can also cause discomfort and affect the appearance of your smile. Invisalign aligners apply gentle, controlled force to move each tooth into its correct position over time. By straightening crowded teeth, Invisalign improves oral hygiene, reduces the risk of gum disease, and gives you a balanced, harmonious smile." },
+          { title: "Closing Gaps Between Teeth", desc: "Misaligned bites can lead to tooth wear, jaw pain, and even speech difficulties. Invisalign can address a range of bite issues such as:Overbite: Upper front teeth extend too far forward Underbite: Lower teeth protrude in front of the upper teeth Crossbite: Teeth overlap incorrectly when biting down With precise planning and custom trays, Invisalign gradually corrects these conditions, ensuring proper alignment, reducing strain on the jaw, and improving facial harmony." },
           { title: "Sensitivity Care", desc: "Whitening tailored for sensitive teeth." }
         ],
         gallery: [
           "https://picsum.photos/200/150?random=13",
           "https://picsum.photos/200/150?random=14",
           "https://picsum.photos/200/150?random=15"
+        ]
+      },
+      3: {
+        name: "",
+        description: "Transform your smile with our advanced orthodontic solutions. Whether you need traditional braces or modern clear aligners, we have the expertise to create a personalized treatment plan that fits your lifestyle and goals.",
+        images: [
+          "https://picsum.photos/800/350?random=16",
+          "https://picsum.photos/800/350?random=17",
+          "https://picsum.photos/800/350?random=18"
+        ],
+        cards: [
+          { title: "Comprehensive Orthodontic Care", desc: "From initial consultation to final adjustments, we provide comprehensive care at every step of your orthodontic journey." },
+          { title: "Customized Treatment Plans", desc: "Each patient is unique, and so is our approach. We create customized treatment plans tailored to your specific needs." },
+          { title: "State-of-the-Art Technology", desc: "We use the latest technology and techniques to ensure efficient and effective treatment with minimal discomfort." }
+        ],
+        gallery: [
+          "https://picsum.photos/200/150?random=19",
+          "https://picsum.photos/200/150?random=20",
+          "https://picsum.photos/200/150?random=21"
         ]
       }
     };
